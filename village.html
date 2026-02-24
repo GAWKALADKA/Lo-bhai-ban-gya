@@ -1,0 +1,268 @@
+<html>
+<head>
+  <title>Explore Garhani | Aayu's Village</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f4f6f9;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 22px;
+    }
+
+    .back-btn {
+      padding: 10px 20px;
+      background: #ff9800;
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #e68900;
+      transform: scale(1.05);
+    }
+
+    .hero {
+      min-height: 60vh;
+      background: linear-gradient(135deg, #00c853, #00d084);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+
+    .video-section {
+      padding: 60px 20px;
+      background: white;
+      text-align: center;
+    }
+
+    .video-section h3 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #111;
+    }
+
+    .video-container {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .video-container video {
+      width: 100%;
+      border-radius: 10px;
+      max-height: 500px;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, #cccccc, #999999);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .motivation {
+      padding: 60px 20px;
+      background: #f9f9f9;
+      text-align: center;
+    }
+
+    .motivation h3 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #111;
+    }
+
+    .quote-box {
+      background: white;
+      padding: 30px;
+      margin: 20px auto;
+      max-width: 700px;
+      border-left: 5px solid #ff9800;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .quote-box p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .quote-box .author {
+      font-size: 14px;
+      color: #666;
+      font-style: italic;
+    }
+
+    .about-garhani {
+      padding: 60px 20px;
+      background: white;
+      text-align: center;
+    }
+
+    .about-garhani h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .about-garhani p {
+      max-width: 800px;
+      margin: 15px auto;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero h2 {
+        font-size: 24px;
+      }
+
+      .quote-box {
+        margin: 15px 0;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌿 Garhani - Mera Gaon 🌿</h1>
+  <a href="index.html" class="back-btn">← Wapas Jayein</a>
+</header>
+
+<section class="hero">
+  <h2>Garhani Ke Raaz 🎬</h2>
+  <p>Hamara gaon hai bahut hi khubsurat aur shaandar! Isme praakrutik saundarya aur Bihari culture ka perfect mixture hai!</p>
+</section>
+
+<section class="video-section">
+  <h3>🎥 Garhani Ki Jhanki</h3>
+  <div class="video-container">
+    <div class="video-placeholder">
+      📹 Aapka Video Yahan Aayega
+    </div>
+    <p style="color: #666; font-size: 14px;">Video file ko add karne ke liye: <code>garhani.mp4</code> ya <code>village.mp4</code> naam se apna video upload kro aur yaha src me daal do!</p>
+  </div>
+</section>
+
+<section class="motivation">
+  <h3>💪 Bhojpuri Motivation - Hindi Me 💪</h3>
+
+  <div class="quote-box">
+    <p>"हम बिहारी हैं, हमारे खून में शामिल है मेहनत और लगन! 🔥"</p>
+    <p>जहां हमारे पूर्वज ने ईंट-पत्थर से महल बनाए, वहीं हम अपने सपनों को पंख दे रहे हैं। कोई रोड़ा आ सकता है, लेकिन हमारा जिंदगी जीने का तरीका कभी नहीं बदलेगा।</p>
+    <span class="author">- Garhani Ka Bihari Spirit</span>
+  </div>
+
+  <div class="quote-box">
+    <p>"गाँव की मिट्टी में है असली ताकत! 🌾"</p>
+    <p>हमारा गाँव, हमारा प्यार, हमारी जान! इसी मिट्टी ने हमें सिखाया है कि कैसे कड़ी मेहनत करनी चाहिए। शहर में भले ही चमक-दमक हो, लेकिन गाँव का प्यार बेजोड़ है।</p>
+    <span class="author">- Garhani Se Aaye Bhai</span>
+  </div>
+
+  <div class="quote-box">
+    <p>"हर सुबह का सूरज, हर शाम की ठंडी हवा - यही है हमारी दौलत! ☀️"</p>
+    <p>पैसे आएंगे, दौलत आएगी, पर गाँव की शांति और प्रेम कहीं और नहीं मिलेगी। इसलिए हम अपने सपनों का पीछा करते हुए भी अपनी जड़ों को नहीं भूलते।</p>
+    <span class="author">- Garhani Ke Naubahár</span>
+  </div>
+
+  <div class="quote-box">
+    <p>"बिहार की आबोहवा, बिहारियों की आत्मा! 💯"</p>
+    <p>हम बिहार के बेटे-बेटियां हैं - जहां अपने गुरु जी की सेवा करना धर्म है। यहाँ की संस्कृति, यहाँ की परंपरा, यहाँ के लोगों का प्यार - सब कुछ हमारे अंदर बसा है।</p>
+    <span class="author">- Ham Hai Bihari Beta</span>
+  </div>
+
+  <div class="quote-box">
+    <p>"आरा जिला है जहां हम पैदा हुए, गर्वानी गाँव है जहां हम जीते हैं! 🏘️"</p>
+    <p>हर गली, हर खेत, हर घर में हमारी यादें हैं। यह सिर्फ एक गाँव नहीं है, यह हमारा घर है, हमारी पहचान है, हमारा गर्व है!</p>
+    <span class="author">- Garhani Ke Lal</span>
+  </div>
+
+</section>
+
+<section class="about-garhani">
+  <h3>🌿 गर्वानी के बारे में 🌿</h3>
+  <p>
+    <strong>गर्वानी</strong> आरा जिले का एक खूबसूरत गाँव है जो हरियाली, प्रकृति की सुंदरता और देहाती संस्कृति के लिए प्रसिद्ध है।
+  </p>
+  <p>
+    यहाँ के खेत, यहाँ के किसान, यहाँ की परंपराएं - सब कुछ एक अलग ही शांति और सकारात्मकता देते हैं। 
+    गर्वानी की मिट्टी में है बहुत कुछ छिपा हुआ - मेहनत, लगन, भाईचारा और प्यार!
+  </p>
+  <p style="margin-top: 20px; font-weight: bold; color: #ff9800;">
+    "हम गर्वानी के बेटे-बेटियां हैं, और इसी पर हमें गर्व है! 🙏"
+  </p>
+</section>
+
+<footer>
+  © 2026 Aayu | Garhani Ke Lal | सर्वाधिकार सुरक्षित
+</footer>
+
+</body>
+</html>
