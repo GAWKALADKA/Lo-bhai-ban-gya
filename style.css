@@ -119,3 +119,30 @@ footer {
   background: #a71d2a;
   transform: scale(1.05);
 }
+.hero {
+  height: 100vh;
+  background: url("bg.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero h2,
+.hero p {
+  position: relative;
+  z-index: 1;
+}
