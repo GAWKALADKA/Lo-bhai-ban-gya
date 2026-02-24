@@ -1,49 +1,90 @@
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
+body {
+  background: #f4f6f9;
+}
+
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
-  padding: 15px 50px;
+  align-items: center;
+  padding: 20px 40px;
   background: #111;
   color: white;
 }
 
+header h1 {
+  font-size: 24px;
+}
+
 nav a {
   color: white;
-  margin-left: 20px;
+  margin-left: 25px;
   text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
+nav a:hover {
+  color: #00c6ff;
+}
+
+/* Hero Section */
 .hero {
   text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(to right, #007bff, #00c6ff);
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
   color: white;
 }
 
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+/* Button */
 button {
-  padding: 10px 20px;
+  padding: 12px 30px;
   border: none;
-  background: black;
+  background: #111;
   color: white;
+  border-radius: 30px;
   cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
 }
-@media (max-width: 768px) {
 
+button:hover {
+  background: #ff9800;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   header {
     flex-direction: column;
-    text-align: center;
   }
 
   nav {
     margin-top: 10px;
   }
-
-  .hero {
-    padding: 50px 10px;
-  }
-
 }
