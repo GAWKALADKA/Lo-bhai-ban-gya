@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Aayu | Garhani Website</title>
+  <title>Aayu | Garhani Ke Lal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -91,18 +91,18 @@
       transform:scale(1.05);
     }
 
-    .video-placeholder{
+    .video-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:20px;
+      max-width:1000px;
+      margin:40px auto;
+    }
+
+    .video-grid video{
       width:100%;
-      max-width:800px;
-      height:400px;
-      background:linear-gradient(135deg,#cccccc,#999999);
-      margin:20px auto;
       border-radius:10px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:white;
-      font-size:18px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.2);
     }
 
     .quote-box{
@@ -136,12 +136,12 @@
   <h1>Aayu From Bihar 🌿</h1>
 </header>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section class="hero" id="home">
   <h2><span id="typing"></span><span>|</span></h2>
   <p>
-    I am a student 📚 I love learning and exploring new things.
-    I proudly belong to Garhani village.
+    I am a student 📚 Future Developer 💻  
+    Proud to belong to Garhani village ❤️
   </p>
   <a href="#explore">
     <button class="btn">Explore My Village</button>
@@ -159,11 +159,26 @@
   </div>
 </section>
 
-<!-- VIDEO SECTION -->
+<!-- 4 VIDEOS -->
 <section>
-  <h2>🎥 Garhani Ki Jhanki</h2>
-  <div class="video-placeholder">
-    📹 Apna video yaha add kare (garhani.mp4)
+  <h2>🎥 Garhani Ki 4 Videos</h2>
+
+  <div class="video-grid">
+    <video controls>
+      <source src="garhani1.mp4" type="video/mp4">
+    </video>
+
+    <video controls>
+      <source src="garhani2.mp4" type="video/mp4">
+    </video>
+
+    <video controls>
+      <source src="garhani3.mp4" type="video/mp4">
+    </video>
+
+    <video controls>
+      <source src="garhani4.mp4" type="video/mp4">
+    </video>
   </div>
 </section>
 
@@ -172,31 +187,21 @@
   <h2>Bhojpuri Motivation 💪</h2>
 
   <div class="quote-box">
-    <p>"हम बिहारी हैं, हमारे खून में मेहनत और लगन है!"</p>
+    <p>"हम बिहारी बानी, मेहनत हमरा रग-रग में बसल बा!" 🔥</p>
   </div>
 
   <div class="quote-box">
-    <p>"गाँव की मिट्टी में असली ताकत है 🌾"</p>
+    <p>"कभी हार ना मानी, जीत के कहानी लिखी!" 💯</p>
   </div>
 
   <div class="quote-box">
-    <p>"आरा जिला हमारा गर्व है ❤️"</p>
+    <p>"गाँव के माटी से उठ के दुनिया में नाम करी!" 🌍</p>
   </div>
 
-</section>
+  <div class="quote-box">
+    <p>"आरा जिला हमार शान बा!" ❤️</p>
+  </div>
 
-<!-- ABOUT -->
-<section>
-  <h2>About Garhani</h2>
-  <p style="max-width:800px;margin:auto;line-height:1.8;">
-    Garhani is a peaceful and beautiful village filled with greenery,
-    culture and unity. Village life teaches simplicity, respect and hard work.
-  </p>
-
-  <br>
-  <a href="#home">
-    <button class="btn">⬆ Back to Top</button>
-  </a>
 </section>
 
 <footer>
@@ -210,7 +215,18 @@
     "Future Developer 💻",
     "Proud From Garhani 🌿",
     "Ham Hai Bihari Beta 💪",
-    "Ara Jila Hai Wo ❤️"
+    "Kuchh Bhi Kar Sakte Hain 🔥",
+    "Sapne Bade Hain 🚀",
+    "Mehnat Hamari Pehchaan Hai 💯",
+    "Village Boy With Big Dreams 🌾",
+    "Coding Is My Passion ❤️‍🔥",
+    "Success Is My Target 🎯",
+    "Garhani Se Global Tak 🌍",
+    "Na Haar Manenge, Na Rukenge 💥",
+    "Guru Ka Aashirwad Mere Saath Hai 🙏",
+    "Ara Jila Hamari Shaan Hai ❤️",
+    "Hard Work + Smart Work = Success 🏆",
+    "Simple Boy, Big Vision 👑"
   ];
 
   let textIndex = 0;
