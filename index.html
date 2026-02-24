@@ -182,5 +182,26 @@
 
   typeEffect();
       </script>
+<script>
+const lightboxLinks = document.querySelectorAll('.lightbox');
+const overlay = document.createElement('div');
+overlay.id = 'lightbox-overlay';
+document.body.appendChild(overlay);
+
+const overlayImg = document.createElement('img');
+overlay.appendChild(overlayImg);
+
+lightboxLinks.forEach(link => {
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    overlayImg.src = this.href;
+    overlay.style.display = 'flex';
+  });
+});
+
+overlay.addEventListener('click', function(){
+  overlay.style.display = 'none';
+});
+</script>
 </body>
 </html>
