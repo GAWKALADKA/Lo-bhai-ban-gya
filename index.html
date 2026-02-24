@@ -1,127 +1,206 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aayu - Garhani Portfolio</title>
-    <style>
-        /* General Reset */
-        * {margin: 0; padding: 0; box-sizing: border-box;}
-        body {font-family: 'Georgia', serif; background: #fefefe; color: #333; scroll-behavior: smooth; line-height: 1.6;}
+  <title>Made by Aayu  | Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* HEADER */
-        header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-        header h1 {
-            font-size: 36px;
-            font-weight: bold;
-            font-style: italic;
-            letter-spacing: 2px;
-        }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-        /* HERO SECTION WITH VILLAGE IMAGE */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: url('garhani1.jpg') no-repeat center center;
-            background-size: cover;
-            position: relative;
-            color: white;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.4);
-        }
-        .hero h2 {font-size: 40px; margin-bottom: 10px;}
-        .hero p {font-size: 20px; max-width: 600px;}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-        /* ABOUT SECTION */
-        .about {
-            padding: 80px 20px; 
-            max-width: 900px; 
-            margin: 0 auto; 
-            text-align: center;
-        }
-        .about h3 {
-            font-size: 36px;
-            color: #1e3c72;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        .about h3::after {
-            content: "";
-            display: block; 
-            width: 60px; 
-            height: 3px; 
-            background: #1e3c72; 
-            margin: 10px auto 0; 
-            border-radius: 2px;
-        }
-        .about p {font-size: 20px; color: #555; margin-top: 20px; line-height: 1.8;}
+    body {
+      background: #f4f6f9;
+    }
 
-        /* SHAYARI SECTION */
-        .shayari {
-            background: #f0f0f0; 
-            padding: 60px 20px; 
-            text-align: center;
-        }
-        .shayari h3 {
-            font-size: 32px; 
-            color: #1e3c72; 
-            margin-bottom: 20px; 
-            position: relative;
-        }
-        .shayari h3::after {
-            content: ""; 
-            display: block; 
-            width: 50%; 
-            height: 3px; 
-            background: #1e3c72; 
-            margin: 10px auto 0; 
-            border-radius: 2px;
-        }
-        .shayari p {
-            font-size: 18px; 
-            color: #555; 
-            margin-top: 20px; 
-            font-style: italic;
-        }
+    header {
+      background: #111;
+      color: white;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+    }
 
-        /* BACK TO TOP BUTTON */
-        #topBtn {
-            display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 18px; border: none; outline: none; background: #1e3c72; color: white; padding: 12px 18px; border-radius: 50px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); cursor: pointer;
-        }
-        #topBtn:hover {background: #16325b;}
+    header h1 {
+      font-size: 22px;
+    }
 
-        /* RESPONSIVE */
-        @media(max-width:768px) {
-            .hero h2 {font-size: 32px;}
-            .hero p {font-size: 18px; max-width: 100%;}
-            .about h3 {font-size: 28px;}
-            .about p {font-size: 18px;}
-            .shayari h3 {font-size: 28px;}
-            .shayari p {font-size: 16px;}
-        }
-    </style>
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      background: #ff9800;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #111;
+      transform: scale(1.05);
+    }
+
+    .about {
+      padding: 60px 20px;
+      text-align: center;
+      background: white;
+    }
+
+    .about h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
 <header>
-    <h1>Aayu</h1>
+  <h1>Aayu</h1>
 </header>
 
-<!-- HERO SECTION WITH VILLAGE IMAGE -->
 <section class="hero">
-    <h2><span id="typing"></span><span class="cursor">|</span></h2>
-    <p>I am a student, proud of my village Garhani, and eager to share its beauty with
+  <h2><span id="typing"></span><span class="cursor">|</span></h2>
+  <p>I am a student who loves learning and exploring new things. I proudly belong to Garhani, a beautiful village known for its peaceful environment, green fields, and rich culture.</p>
+  <button class="btn">Explore My Village</button>
+</section>
+  <section class="gallery">
+  <h3>Beautiful Garhani 🌿</h3>
+  <div class="gallery-grid">
+    <img src="garhani1.jpg" alt="Garhani 1">
+    <img src="garhani2.jpg" alt="Garhani 2">
+    <img src="garhani3.jpg" alt="Garhani 3">
+    <img src="garhani4.jpg" alt="Garhani 4">
+  </div>
+  </section>
+
+<section class="about">
+  <h3>Beauty of Garhani</h3>
+  <p>
+    Garhani is a charming village filled with natural beauty, fresh air, and greenery all around.
+    The fields, the sunrise, the calm atmosphere, and the simple lifestyle of the people make it truly special.
+    The culture, traditions, and unity among villagers reflect the true heart of rural India.
+  </p><section class="contact">
+  <h3> Chat on Devloper </h3>
+  <p>If you want to connect with me, message me on WhatsApp.</p>
+
+  <a href="https://wa.me/917520947031" target="_blank" class="whatsapp-btn">
+</section>
+
+<footer>
+  © 2026 Aayu | All Rights Reserved
+</footer>
+<script>
+  const texts = [
+    "Hi, I am Aayu 👋",
+    "I am a Student 📚",
+    "Future Developer 💻",
+    "Proud From Garhani 🌿"
+  ];
+
+  let textIndex = 0;
+  let charIndex = 0;
+  let currentText = "";
+  let isDeleting = false;
+
+  function typeEffect() {
+    currentText = texts[textIndex];
+    
+    if (!isDeleting) {
+      document.getElementById("typing").innerHTML =
+        currentText.substring(0, charIndex + 1);
+      charIndex++;
+      
+      if (charIndex === currentText.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 1000);
+        return;
+      }
+    } else {
+      document.getElementById("typing").innerHTML =
+        currentText.substring(0, charIndex - 1);
+      charIndex--;
+      
+      if (charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+      }
+    }
+
+    setTimeout(typeEffect, isDeleting ? 50 : 100);
+  }
+
+  typeEffect();
+      </script>
+<script>
+const lightboxLinks = document.querySelectorAll('.lightbox');
+const overlay = document.createElement('div');
+overlay.id = 'lightbox-overlay';
+document.body.appendChild(overlay);
+
+const overlayImg = document.createElement('img');
+overlay.appendChild(overlayImg);
+
+lightboxLinks.forEach(link => {
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    overlayImg.src = this.href;
+    overlay.style.display = 'flex';
+  });
+});
+
+overlay.addEventListener('click', function(){
+  overlay.style.display = 'none';
+});
+</script>
+</body>
+</html>            
