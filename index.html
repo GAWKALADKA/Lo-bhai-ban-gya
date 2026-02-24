@@ -1,29 +1,131 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Aayu | Personal Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My village garhani made by aayu 😅</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f4f6f9;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+    }
+
+    header h1 {
+      font-size: 22px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      background: #ff9800;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #111;
+      transform: scale(1.05);
+    }
+
+    .about {
+      padding: 60px 20px;
+      text-align: center;
+      background: white;
+    }
+
+    .about h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
 <header>
-  <h1>My village Garhani Made by Aayu 💘</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Mader details</a>
-    <a href="#">Contact</a>
-  </nav>
+  <h1>Aayu</h1>
 </header>
 
 <section class="hero">
-  <h2>Build Your Online Presence</h2>
-  <p>Professional website powered by BIAHRI esp>
-  <button>Get Started</button>
+  <h2>Hi, I am Aayu 👋</h2>
+  <p>I am a student who loves learning and exploring new things. I proudly belong to Garhani, a beautiful village known for its peaceful environment, green fields, and rich culture.</p>
+  <button class="btn">Explore My Village</button>
+</section>
+
+<section class="about">
+  <h3>Beauty of Garhani</h3>
+  <p>
+    Garhani is a charming village filled with natural beauty, fresh air, and greenery all around.
+    The fields, the sunrise, the calm atmosphere, and the simple lifestyle of the people make it truly special.
+    The culture, traditions, and unity among villagers reflect the true heart of rural India.
+  </p>
 </section>
 
 <footer>
-  <p>© 2026 Made by Aayu | All Rights Reserved</p>
+  © 2026 Aayu | All Rights Reserved
 </footer>
 
 </body>
