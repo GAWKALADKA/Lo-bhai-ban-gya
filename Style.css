@@ -1,1 +1,33 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 50px;
+  background: #111;
+  color: white;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+}
