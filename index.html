@@ -1,102 +1,130 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Made by Aayu  | Personal Website</title>
+  <title>Aayu | Garhani Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
     }
 
-    body {
-      background: #f4f6f9;
+    body{
+      background:#f4f6f9;
+      scroll-behavior:smooth;
     }
 
-    header {
-      background: #111;
-      color: white;
-      padding: 15px 40px;
-      position: sticky;
-      top: 0;
+    header{
+      background:#111;
+      color:white;
+      padding:15px 40px;
+      position:sticky;
+      top:0;
+      z-index:1000;
     }
 
-    header h1 {
-      font-size: 22px;
+    header h1{
+      font-size:22px;
     }
 
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #007bff, #00c6ff);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 20px;
+    section{
+      padding:60px 20px;
+      text-align:center;
     }
 
-    .hero h2 {
-      font-size: 40px;
-      margin-bottom: 15px;
+    .hero{
+      min-height:100vh;
+      background:linear-gradient(135deg,#007bff,#00c6ff);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      color:white;
     }
 
-    .hero p {
-      font-size: 18px;
-      max-width: 600px;
-      margin-bottom: 30px;
+    .hero h2{
+      font-size:40px;
+      margin-bottom:15px;
     }
 
-    .btn {
-      padding: 12px 30px;
-      background: #ff9800;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: 0.3s;
+    .hero p{
+      max-width:600px;
+      margin-bottom:30px;
+      font-size:18px;
     }
 
-    .btn:hover {
-      background: #111;
-      transform: scale(1.05);
+    .btn{
+      padding:12px 30px;
+      background:#ff9800;
+      color:white;
+      border:none;
+      border-radius:30px;
+      cursor:pointer;
+      font-size:16px;
+      transition:0.3s;
     }
 
-    .about {
-      padding: 60px 20px;
-      text-align: center;
-      background: white;
+    .btn:hover{
+      background:#111;
+      transform:scale(1.05);
     }
 
-    .about h3 {
-      font-size: 28px;
-      margin-bottom: 15px;
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:15px;
+      margin-top:20px;
     }
 
-    .about p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 17px;
-      line-height: 1.6;
+    .gallery-grid img{
+      width:100%;
+      border-radius:10px;
+      transition:0.3s;
     }
 
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 20px;
+    .gallery-grid img:hover{
+      transform:scale(1.05);
     }
 
-    @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 28px;
+    .video-placeholder{
+      width:100%;
+      max-width:800px;
+      height:400px;
+      background:linear-gradient(135deg,#cccccc,#999999);
+      margin:20px auto;
+      border-radius:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:18px;
+    }
+
+    .quote-box{
+      background:white;
+      padding:25px;
+      margin:20px auto;
+      max-width:700px;
+      border-left:5px solid #ff9800;
+      border-radius:10px;
+      box-shadow:0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    footer{
+      background:#111;
+      color:white;
+      padding:20px;
+      text-align:center;
+    }
+
+    @media(max-width:768px){
+      .hero h2{
+        font-size:26px;
       }
     }
   </style>
@@ -105,371 +133,114 @@
 <body>
 
 <header>
-  <h1>Aayu From Bihar </h1>
+  <h1>Aayu From Bihar 🌿</h1>
 </header>
 
-<section class="hero">
-  <h2><span id="typing"></span><span class="cursor">|</span></h2>
-  <p>I am a student i love my hobbys 💰 Exploredent loves learning and exploring new things. I proudly belong to Garhani, a beautiful village known for its peaceful environment, green fields, and rich culture.</p>
-  <button class="btn">Explore My Village</button>
-</section>
-  <section class="gallery">
-  <h3>Beautiful Garhani 🌿</h3>
-  <div class="gallery-grid">
-    <img src="garhani1.jpg" alt="Garhani 1">
-    <img src="garhani2.jpg" alt="Garhani 2">
-    <img src="garhani3.jpg" alt="Garhani 3">
-    <img src="garhani4.jpg" alt="Garhani 4">
-  </div>
-  </section>
-
-<section class="about">
-  <h3>Beauty of Garhani</h3>
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <h2><span id="typing"></span><span>|</span></h2>
   <p>
-    Garhani is a charming village filled with natural beauty, fresh air, and greenery all around.
-    The fields, the sunrise, the calm atmosphere, and the simple lifestyle of the people make it truly special.
-    The culture, traditions, and unity among villagers reflect the true heart of rural India.
-  </p><section class="contact">
-  <h3> Chat on Devloper </h3>
-  <p>If you want to connect with me, message me on WhatsApp.</p>
+    I am a student 📚 I love learning and exploring new things.
+    I proudly belong to Garhani village.
+  </p>
+  <a href="#explore">
+    <button class="btn">Explore My Village</button>
+  </a>
+</section>
 
-  <a href="https://wa.me/917520947031" target="_blank" class="whatsapp-btn">
+<!-- GALLERY -->
+<section id="explore">
+  <h2>Beautiful Garhani 🌿</h2>
+  <div class="gallery-grid">
+    <img src="garhani1.jpg" alt="">
+    <img src="garhani2.jpg" alt="">
+    <img src="garhani3.jpg" alt="">
+    <img src="garhani4.jpg" alt="">
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section>
+  <h2>🎥 Garhani Ki Jhanki</h2>
+  <div class="video-placeholder">
+    📹 Apna video yaha add kare (garhani.mp4)
+  </div>
+</section>
+
+<!-- MOTIVATION -->
+<section style="background:#f9f9f9;">
+  <h2>Bhojpuri Motivation 💪</h2>
+
+  <div class="quote-box">
+    <p>"हम बिहारी हैं, हमारे खून में मेहनत और लगन है!"</p>
+  </div>
+
+  <div class="quote-box">
+    <p>"गाँव की मिट्टी में असली ताकत है 🌾"</p>
+  </div>
+
+  <div class="quote-box">
+    <p>"आरा जिला हमारा गर्व है ❤️"</p>
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+<section>
+  <h2>About Garhani</h2>
+  <p style="max-width:800px;margin:auto;line-height:1.8;">
+    Garhani is a peaceful and beautiful village filled with greenery,
+    culture and unity. Village life teaches simplicity, respect and hard work.
+  </p>
+
+  <br>
+  <a href="#home">
+    <button class="btn">⬆ Back to Top</button>
+  </a>
 </section>
 
 <footer>
-  © 2026 Aayu | All Rights Reserved
+  © 2026 Aayu | Garhani Ke Lal | All Rights Reserved
 </footer>
+
 <script>
   const texts = [
     "Hi, I am Aayu 👋",
     "I am a Student 📚",
     "Future Developer 💻",
-    "Proud From Garhani 🌿"
-    "Ham hai bihari beta"
-  "mere guru ji dk shrama"
-  "Ara jila hai who 
+    "Proud From Garhani 🌿",
+    "Ham Hai Bihari Beta 💪",
+    "Ara Jila Hai Wo ❤️"
   ];
 
   let textIndex = 0;
   let charIndex = 0;
-  let currentText = "";
   let isDeleting = false;
 
-  function typeEffect() {
-    currentText = texts[textIndex];
-    
-    if (!isDeleting) {
+  function typeEffect(){
+    let current = texts[textIndex];
+
+    if(!isDeleting){
       document.getElementById("typing").innerHTML =
-        currentText.substring(0, charIndex + 1);
-      charIndex++;
-      
-      if (charIndex === currentText.length) {
+        current.substring(0,charIndex++);
+      if(charIndex > current.length){
         isDeleting = true;
-        setTimeout(typeEffect, 1000);
+        setTimeout(typeEffect,1000);
         return;
       }
     } else {
       document.getElementById("typing").innerHTML =
-        currentText.substring(0, charIndex - 1);
-      charIndex--;
-      
-      if (charIndex === 0) {
+        current.substring(0,charIndex--);
+      if(charIndex < 0){
         isDeleting = false;
-        textIndex = (textIndex + 1) % texts.length;
+        textIndex = (textIndex+1)%texts.length;
       }
     }
-
-    setTimeout(typeEffect, isDeleting ? 50 : 100);
+    setTimeout(typeEffect,isDeleting?50:100);
   }
 
   typeEffect();
-      </script>
-<script>
-const lightboxLinks = document.querySelectorAll('.lightbox');
-const overlay = document.createElement('div');
-overlay.id = 'lightbox-overlay';
-document.body.appendChild(overlay);
-
-const overlayImg = document.createElement('img');
-overlay.appendChild(overlayImg);
-
-lightboxLinks.forEach(link => {
-  link.addEventListener('click', function(e){
-    e.preventDefault();
-    overlayImg.src = this.href;
-    overlay.style.display = 'flex';
-  });
-});
-
-overlay.addEventListener('click', function(){
-  overlay.style.display = 'none';
-});
 </script>
-</body>
-</html>            
-  <title>Explore Garhani | Aayu's Village</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background: #f4f6f9;
-    }
-
-    header {
-      background: #111;
-      color: white;
-      padding: 15px 40px;
-      position: sticky;
-      top: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      font-size: 22px;
-    }
-
-    .back-btn {
-      padding: 10px 20px;
-      background: #ff9800;
-      color: white;
-      text-decoration: none;
-      border-radius: 20px;
-      transition: 0.3s;
-    }
-
-    .back-btn:hover {
-      background: #e68900;
-      transform: scale(1.05);
-    }
-
-    .hero {
-      min-height: 60vh;
-      background: linear-gradient(135deg, #00c853, #00d084);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 40px 20px;
-    }
-
-    .hero h2 {
-      font-size: 36px;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 600px;
-      margin-bottom: 20px;
-    }
-
-    .video-section {
-      padding: 60px 20px;
-      background: white;
-      text-align: center;
-    }
-
-    .video-section h3 {
-      font-size: 28px;
-      margin-bottom: 30px;
-      color: #111;
-    }
-
-    .video-container {
-      max-width: 800px;
-      margin: 0 auto 40px;
-      background: #f0f0f0;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .video-container video {
-      width: 100%;
-      border-radius: 10px;
-      max-height: 500px;
-    }
-
-    .video-placeholder {
-      width: 100%;
-      height: 400px;
-      background: linear-gradient(135deg, #cccccc, #999999);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-
-    .motivation {
-      padding: 60px 20px;
-      background: #f9f9f9;
-      text-align: center;
-    }
-
-    .motivation h3 {
-      font-size: 28px;
-      margin-bottom: 30px;
-      color: #111;
-    }
-
-    .quote-box {
-      background: white;
-      padding: 30px;
-      margin: 20px auto;
-      max-width: 700px;
-      border-left: 5px solid #ff9800;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    .quote-box p {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    .quote-box .author {
-      font-size: 14px;
-      color: #666;
-      font-style: italic;
-    }
-
-    .about-garhani {
-      padding: 60px 20px;
-      background: white;
-      text-align: center;
-    }
-
-    .about-garhani h3 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #111;
-    }
-
-    .about-garhani p {
-      max-width: 800px;
-      margin: 15px auto;
-      font-size: 16px;
-      line-height: 1.8;
-      color: #555;
-    }
-
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .hero h2 {
-        font-size: 24px;
-      }
-
-      .quote-box {
-        margin: 15px 0;
-        padding: 20px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>🌿 Garhani - Mera Gaon 🌿</h1>
-  <a href="index.html" class="back-btn">← Wapas Jayein</a>
-</header>
-
-<section class="hero">
-  <h2>Garhani Ke Raaz 🎬</h2>
-  <p>Hamara gaon hai bahut hi khubsurat aur shaandar! Isme praakrutik saundarya aur Bihari culture ka perfect mixture hai!</p>
-</section>
-
-<section class="video-section">
-  <h3>🎥 Garhani Ki Jhanki</h3>
-  <div class="video-container">
-    <div class="video-placeholder">
-      📹 Aapka Video Yahan Aayega
-    </div>
-    <p style="color: #666; font-size: 14px;">Video file ko add karne ke liye: <code>garhani.mp4</code> ya <code>village.mp4</code> naam se apna video upload kro aur yaha src me daal do!</p>
-  </div>
-</section>
-
-<section class="motivation">
-  <h3>💪 Bhojpuri Motivation - Hindi Me 💪</h3>
-
-  <div class="quote-box">
-    <p>"हम बिहारी हैं, हमारे खून में शामिल है मेहनत और लगन! 🔥"</p>
-    <p>जहां हमारे पूर्वज ने ईंट-पत्थर से महल बनाए, वहीं हम अपने सपनों को पंख दे रहे हैं। कोई रोड़ा आ सकता है, लेकिन हमारा जिंदगी जीने का तरीका कभी नहीं बदलेगा।</p>
-    <span class="author">- Garhani Ka Bihari Spirit</span>
-  </div>
-
-  <div class="quote-box">
-    <p>"गाँव की मिट्टी में है असली ताकत! 🌾"</p>
-    <p>हमारा गाँव, हमारा प्यार, हमारी जान! इसी मिट्टी ने हमें सिखाया है कि कैसे कड़ी मेहनत करनी चाहिए। शहर में भले ही चमक-दमक हो, लेकिन गाँव का प्यार बेजोड़ है।</p>
-    <span class="author">- Garhani Se Aaye Bhai</span>
-  </div>
-
-  <div class="quote-box">
-    <p>"हर सुबह का सूरज, हर शाम की ठंडी हवा - यही है हमारी दौलत! ☀️"</p>
-    <p>पैसे आएंगे, दौलत आएगी, पर गाँव की शांति और प्रेम कहीं और नहीं मिलेगी। इसलिए हम अपने सपनों का पीछा करते हुए भी अपनी जड़ों को नहीं भूलते।</p>
-    <span class="author">- Garhani Ke Naubahár</span>
-  </div>
-
-  <div class="quote-box">
-    <p>"बिहार की आबोहवा, बिहारियों की आत्मा! 💯"</p>
-    <p>हम बिहार के बेटे-बेटियां हैं - जहां अपने गुरु जी की सेवा करना धर्म है। यहाँ की संस्कृति, यहाँ की परंपरा, यहाँ के लोगों का प्यार - सब कुछ हमारे अंदर बसा है।</p>
-    <span class="author">- Ham Hai Bihari Beta</span>
-  </div>
-
-  <div class="quote-box">
-    <p>"आरा जिला है जहां हम पैदा हुए, गर्वानी गाँव है जहां हम जीते हैं! 🏘️"</p>
-    <p>हर गली, हर खेत, हर घर में हमारी यादें हैं। यह सिर्फ एक गाँव नहीं है, यह हमारा घर है, हमारी पहचान है, हमारा गर्व है!</p>
-    <span class="author">- Garhani Ke Lal</span>
-  </div>
-
-</section>
-
-<section class="about-garhani">
-  <h3>🌿 Garhani के बारे में 🌿</h3>
-  <p>
-    <strong>Garhani</strong> आरा जिले का एक खूबसूरत गाँव है जो हरियाली, प्रकृति की सुंदरता और देहाती संस्कृति के लिए प्रसिद्ध है।
-  </p>
-  <p>
-    यहाँ के खेत, यहाँ के किसान, यहाँ की परंपराएं - सब कुछ एक अलग ही शांति और सकारात्मकता देते हैं। 
-    गर्वानी की मिट्टी में है बहुत कुछ छिपा हुआ - मेहनत, लगन, भाईचारा और प्यार!
-  </p>
-  <p style="margin-top: 20px; font-weight: bold; color: #ff9800;">
-    "हम  Garhani के बेटे-बेटियां हैं, और इसी पर हमें गर्व है! 🙏"
-  </p>
-</section>
-
-<footer>
-  © 2026 Aayu | Garhani Ke Lal | सर्वाधिकार सुरक्षित
-</footer>
 
 </body>
-</html>के
+</html>
