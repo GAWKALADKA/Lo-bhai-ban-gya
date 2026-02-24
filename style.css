@@ -10,7 +10,18 @@ body {
 }
 
 /* Header */
-  header {
+  header {.cursor {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 28px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
   position: sticky;
   top: 0;
   z-index: 1000;
