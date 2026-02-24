@@ -92,3 +92,19 @@ footer {
     margin-top: 10px;
   }
 }
+.danger-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #dc3545;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.danger-btn:hover {
+  background: #a71d2a;
+  transform: scale(1.05);
+}
