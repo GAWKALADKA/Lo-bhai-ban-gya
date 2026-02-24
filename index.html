@@ -1,261 +1,225 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Aayu | Garhani Ke Lal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aayu | Garhani Ke Lal</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f6f9;scroll-behavior:smooth;}
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
-    }
+header{
+background:#111;color:white;padding:15px 40px;
+position:sticky;top:0;z-index:1000;
+}
 
-    body{
-      background:#f4f6f9;
-      scroll-behavior:smooth;
-    }
+section{padding:70px 20px;text-align:center;}
 
-    header{
-      background:#111;
-      color:white;
-      padding:15px 40px;
-      position:sticky;
-      top:0;
-      z-index:1000;
-    }
+.hero{
+min-height:100vh;
+background:linear-gradient(135deg,#007bff,#00c6ff);
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+color:white;padding:20px;
+}
 
-    header h1{
-      font-size:22px;
-    }
+.hero h2{
+font-size:34px;margin-bottom:20px;
+max-width:900px;
+text-shadow:0 0 10px rgba(255,255,255,0.7);
+}
 
-    section{
-      padding:60px 20px;
-      text-align:center;
-    }
+.cursor{
+display:inline-block;
+animation:blink 0.8s infinite;
+}
 
-    .hero{
-      min-height:100vh;
-      background:linear-gradient(135deg,#007bff,#00c6ff);
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      color:white;
-    }
+@keyframes blink{
+0%{opacity:1;}
+50%{opacity:0;}
+100%{opacity:1;}
+}
 
-    .hero h2{
-      font-size:40px;
-      margin-bottom:15px;
-    }
+.hero p{max-width:600px;margin-bottom:30px;font-size:18px;}
 
-    .hero p{
-      max-width:600px;
-      margin-bottom:30px;
-      font-size:18px;
-    }
+.btn{
+padding:12px 30px;background:#ff9800;color:white;
+border:none;border-radius:30px;cursor:pointer;
+transition:.3s;
+}
+.btn:hover{background:#111;transform:scale(1.05);}
 
-    .btn{
-      padding:12px 30px;
-      background:#ff9800;
-      color:white;
-      border:none;
-      border-radius:30px;
-      cursor:pointer;
-      font-size:16px;
-      transition:0.3s;
-    }
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;margin-top:20px;
+}
+.gallery-grid img{
+width:100%;border-radius:10px;transition:.3s;
+}
+.gallery-grid img:hover{transform:scale(1.05);}
 
-    .btn:hover{
-      background:#111;
-      transform:scale(1.05);
-    }
+.video-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;max-width:1000px;margin:40px auto;
+}
+.video-grid video{
+width:100%;border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
 
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:15px;
-      margin-top:20px;
-    }
+.location-section{
+padding:80px 20px;
+background:linear-gradient(135deg,#1e3c72,#2a5298);
+color:white;text-align:center;
+}
+.location-card{
+max-width:1000px;margin:auto;
+display:flex;flex-wrap:wrap;gap:20px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+border-radius:20px;padding:20px;
+}
+.location-card iframe{
+flex:1 1 400px;height:350px;
+border:none;border-radius:15px;
+}
+.loc-info{
+flex:1 1 300px;
+display:flex;flex-direction:column;justify-content:center;
+}
+.map-btn{
+padding:12px 25px;border:none;border-radius:30px;
+background:#ff9800;color:white;cursor:pointer;
+font-weight:bold;
+}
 
-    .gallery-grid img{
-      width:100%;
-      border-radius:10px;
-      transition:0.3s;
-    }
+.quote-box{
+background:white;padding:25px;margin:20px auto;
+max-width:700px;border-left:5px solid #ff9800;
+border-radius:10px;
+}
 
-    .gallery-grid img:hover{
-      transform:scale(1.05);
-    }
+footer{
+background:#111;color:white;
+padding:20px;text-align:center;
+}
 
-    .video-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:20px;
-      max-width:1000px;
-      margin:40px auto;
-    }
-
-    .video-grid video{
-      width:100%;
-      border-radius:10px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .quote-box{
-      background:white;
-      padding:25px;
-      margin:20px auto;
-      max-width:700px;
-      border-left:5px solid #ff9800;
-      border-radius:10px;
-      box-shadow:0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    footer{
-      background:#111;
-      color:white;
-      padding:20px;
-      text-align:center;
-    }
-
-    @media(max-width:768px){
-      .hero h2{
-        font-size:26px;
-      }
-    }
-  </style>
+@media(max-width:768px){
+.hero h2{font-size:22px;}
+.location-card{flex-direction:column;}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>Aayu From Bihar 🌿</h1>
+<h1>Aayu From Bihar 🌿</h1>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <h2><span id="typing"></span><span>|</span></h2>
-  <p>
-    I am a student 📚 Future Developer 💻  
-    Proud to belong to Garhani village ❤️
-  </p>
-  <a href="#explore">
-    <button class="btn">Explore My Village</button>
-  </a>
+<section class="hero">
+<h2><span id="typing"></span><span class="cursor">|</span></h2>
+<p>Proud Student From Garhani ❤️ | Future Developer 💻</p>
+<a href="#explore"><button class="btn">Explore My Village</button></a>
 </section>
 
-<!-- GALLERY -->
 <section id="explore">
-  <h2>Beautiful Garhani 🌿</h2>
-  <div class="gallery-grid">
-    <img src="garhani1.jpg" alt="">
-    <img src="garhani2.jpg" alt="">
-    <img src="garhani3.jpg" alt="">
-    <img src="garhani4.jpg" alt="">
-  </div>
+<h2>Beautiful Garhani 🌿</h2>
+<div class="gallery-grid">
+<img src="garhani1.jpg">
+<img src="garhani2.jpg">
+<img src="garhani3.jpg">
+<img src="garhani4.jpg">
+</div>
 </section>
 
-<!-- 4 VIDEOS -->
 <section>
-  <h2>🎥 Garhani Ki 4 Videos</h2>
-
-  <div class="video-grid">
-    <video controls>
-      <source src="garhani1.mp4" type="video/mp4">
-    </video>
-
-    <video controls>
-      <source src="garhani2.mp4" type="video/mp4">
-    </video>
-
-    <video controls>
-      <source src="garhani3.mp4" type="video/mp4">
-    </video>
-
-    <video controls>
-      <source src="garhani4.mp4" type="video/mp4">
-    </video>
-  </div>
+<h2>🎥 Garhani Ki 4 Videos</h2>
+<div class="video-grid">
+<video controls><source src="garhani1.mp4" type="video/mp4"></video>
+<video controls><source src="garhani2.mp4" type="video/mp4"></video>
+<video controls><source src="garhani3.mp4" type="video/mp4"></video>
+<video controls><source src="garhani4.mp4" type="video/mp4"></video>
+</div>
 </section>
 
-<!-- MOTIVATION -->
+<section class="location-section">
+<h2>📍 Garhani Live Location</h2>
+<div class="location-card">
+<iframe src="https://www.google.com/maps?q=Garhani,Bihar&output=embed"></iframe>
+<div class="loc-info">
+<h3>Garhani, Bhojpur, Bihar</h3>
+<p>Proud Village From Ara District ❤️</p>
+<a href="https://www.google.com/maps?q=Garhani,Bihar" target="_blank">
+<button class="map-btn">Open in Google Maps</button>
+</a>
+</div>
+</div>
+</section>
+
 <section style="background:#f9f9f9;">
-  <h2>Bhojpuri Motivation 💪</h2>
+<h2>Bhojpuri Motivation 💪</h2>
 
-  <div class="quote-box">
-    <p>"हम बिहारी बानी, मेहनत हमरा रग-रग में बसल बा!" 🔥</p>
-  </div>
-
-  <div class="quote-box">
-    <p>"कभी हार ना मानी, जीत के कहानी लिखी!" 💯</p>
-  </div>
-
-  <div class="quote-box">
-    <p>"गाँव के माटी से उठ के दुनिया में नाम करी!" 🌍</p>
-  </div>
-
-  <div class="quote-box">
-    <p>"आरा जिला हमार शान बा!" ❤️</p>
-  </div>
+<div class="quote-box">हम बिहारी बानी, मेहनत हमरा रग-रग में बसल बा! 🔥</div>
+<div class="quote-box">कभी हार ना मानी, जीत के कहानी लिखी! 💯</div>
+<div class="quote-box">गाँव के माटी से उठ के दुनिया में नाम करी! 🌍</div>
+<div class="quote-box">बिहार के बेटा कभी पीछे ना हटे! 🚀</div>
+<div class="quote-box">सपना देखे वाला ही इतिहास बनावे ला! 📖</div>
+<div class="quote-box">ना डरब, ना झुकब — बस आगे बढ़ब! 💥</div>
+<div class="quote-box">मेहनत के पसीना ही असली दौलत ह! 💎</div>
+<div class="quote-box">आरा जिला हमार शान बा! ❤️</div>
 
 </section>
 
 <footer>
-  © 2026 Aayu | Garhani Ke Lal | All Rights Reserved
+© 2026 Aayu | Garhani Ke Lal
 </footer>
 
 <script>
-  const texts = [
-    "Hi, I am Aayu 👋",
-    "I am a Student 📚",
-    "Future Developer 💻",
-    "Proud From Garhani 🌿",
-    "Ham Hai Bihari Beta 💪",
-    "Kuchh Bhi Kar Sakte Hain 🔥",
-    "Sapne Bade Hain 🚀",
-    "Mehnat Hamari Pehchaan Hai 💯",
-    "Village Boy With Big Dreams 🌾",
-    "Coding Is My Passion ❤️‍🔥",
-    "Success Is My Target 🎯",
-    "Garhani Se Global Tak 🌍",
-    "Na Haar Manenge, Na Rukenge 💥",
-    "Guru Ka Aashirwad Mere Saath Hai 🙏",
-    "Ara Jila Hamari Shaan Hai ❤️",
-    "Hard Work + Smart Work = Success 🏆",
-    "Simple Boy, Big Vision 👑"
-  ];
+const texts=[
+"Hi, I am Aayu — A Proud Student From Garhani Village In Bihar 👋",
+"I Am A Future Software Developer Who Dreams Big And Works Hard Everyday 💻",
+"Ham Hai Bihari Beta — Mehnat Hamari Pehchaan Hai Aur Success Hamara Lakshya 💪",
+"Garhani Se Uthkar Global Level Par Apni Pehchaan Banana Hai 🌍",
+"I Believe In Hard Work, Smart Work And Never Giving Up Attitude 🔥",
+"Village Background Se Aakar Technology World Me Apna Naam Banana Hai 🚀",
+"From Ara District To The International Stage — This Is My Vision 👑",
+"Coding Is Not Just A Skill For Me, It Is My Passion And Future ❤️‍🔥",
+"Sapne Bade Hain Aur Hausla Usse Bhi Bada Hai 💯",
+"Born In Bihar, Built With Determination And Focus 🎯",
+"Garhani Ka Naam Roshan Karna Hai Technology Ke Field Me ✨",
+"I Am Building My Future With Dedication And Discipline 🌟",
+"Na Haar Manenge, Na Rukenge — Bas Aage Badhte Rahenge 💥",
+"Simple Village Boy With A Powerful Global Vision 🌎",
+"From Bihar To The World — This Is My Journey 🚀"
+];
 
-  let textIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
+let ti=0,ci=0,del=false;
 
-  function typeEffect(){
-    let current = texts[textIndex];
+function typeEffect(){
+let cur=texts[ti];
 
-    if(!isDeleting){
-      document.getElementById("typing").innerHTML =
-        current.substring(0,charIndex++);
-      if(charIndex > current.length){
-        isDeleting = true;
-        setTimeout(typeEffect,1000);
-        return;
-      }
-    } else {
-      document.getElementById("typing").innerHTML =
-        current.substring(0,charIndex--);
-      if(charIndex < 0){
-        isDeleting = false;
-        textIndex = (textIndex+1)%texts.length;
-      }
-    }
-    setTimeout(typeEffect,isDeleting?50:100);
-  }
+if(!del){
+document.getElementById("typing").innerHTML=cur.substring(0,ci++);
+if(ci>cur.length){
+del=true;
+setTimeout(typeEffect,2000);
+return;
+}
+}else{
+document.getElementById("typing").innerHTML=cur.substring(0,ci--);
+if(ci<0){
+del=false;
+ti=(ti+1)%texts.length;
+}
+}
+setTimeout(typeEffect,40);
+}
 
-  typeEffect();
+typeEffect();
 </script>
 
 </body>
