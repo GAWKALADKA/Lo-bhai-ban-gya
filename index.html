@@ -3,184 +3,312 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aayu From Bihar</title>
+<title>Garhani Pro Quiz</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
-body{background:#0f172a;color:white;}
-
-nav{position:fixed;width:100%;background:rgba(0,0,0,0.6);padding:15px 40px;display:flex;justify-content:space-between;align-items:center;z-index:1000;}
-nav h2{color:#f97316;}
-
-.hero{height:100vh;background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;}
-.hero::before{content:'';position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.6);}
-.hero-content{position:relative;z-index:2;}
-.hero h1{font-size:50px;margin-bottom:10px;}
-
-.btn{padding:10px 25px;border:none;cursor:pointer;border-radius:30px;margin:5px;font-weight:600;}
-.primary{background:#f97316;color:white;}
-.secondary{background:white;color:#0f172a;}
-
-section{padding:80px 10%;}
-.section-title{text-align:center;margin-bottom:40px;font-size:32px;color:#f97316;}
-
-.quiz-box{background:#1e293b;padding:30px;border-radius:15px;max-width:600px;margin:auto;text-align:center;}
-
-footer{background:#020617;text-align:center;padding:20px;margin-top:40px;}
-
-/* CERTIFICATE DESIGN */
-.certificate-wrapper{
-display:none;
-text-align:center;
-padding:60px 10%;
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(-45deg,#0f172a,#1e293b,#334155,#0f172a);
+background-size:400% 400%;
+animation:gradientBG 10s ease infinite;
+color:white;
+transition:0.4s;
 }
 
-.certificate-box{
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.light{
+background:#f1f5f9;
+color:#0f172a;
+animation:none;
+}
+
+header{
+padding:40px;
+text-align:center;
+}
+
+h1{font-size:40px;}
+
+.btn{
+padding:10px 20px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+margin:5px;
+font-weight:bold;
+}
+
+.primary{background:#f97316;color:white;}
+.secondary{background:#64748b;color:white;}
+
+.progress{
+width:100%;
+background:#334155;
+height:10px;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+.progress-bar{
+height:10px;
+width:0%;
+background:#f97316;
+border-radius:20px;
+transition:0.3s;
+}
+
+section{
+padding:40px 10%;
+text-align:center;
+}
+
+#quizBox{
+max-width:600px;
+margin:auto;
+}
+
+.option{
+display:block;
+margin:10px 0;
+padding:10px;
+background:#1e293b;
+border-radius:10px;
+cursor:pointer;
+}
+
+.option:hover{
+background:#f97316;
+}
+
+.timeline{
+text-align:left;
+max-width:600px;
+margin:auto;
+}
+
+.timeline div{
+margin:15px 0;
+padding-left:20px;
+border-left:3px solid #f97316;
+}
+
+#certificateBox{
 background:white;
 color:#0f172a;
-padding:60px 40px;
-max-width:850px;
+padding:40px;
+border-radius:15px;
+max-width:700px;
 margin:auto;
-border:15px solid transparent;
-border-image:linear-gradient(45deg,#FFD700,#FFA500,#FFD700) 1;
-border-radius:20px;
-box-shadow:0 0 40px rgba(255,215,0,0.6);
-position:relative;
+border:8px solid gold;
+box-shadow:0 0 30px gold;
 }
 
-/* Medal */
 .medal{
-font-size:70px;
-margin-bottom:10px;
-animation: glow 1.5s infinite alternate;
+font-size:60px;
 }
 
-@keyframes glow{
-from{transform:scale(1);}
-to{transform:scale(1.1);}
+.toggle{
+position:fixed;
+top:20px;
+right:20px;
 }
 
-.cert-id{
-position:absolute;
-top:15px;
-right:25px;
-font-size:14px;
-font-weight:bold;
-color:#b45309;
-}
-
-.certificate-box h1{
-font-size:36px;
-margin-bottom:15px;
-color:#b45309;
-}
-
-.gold-line{
-width:250px;
-height:4px;
-background:linear-gradient(to right,#FFD700,#FFA500,#FFD700);
-margin:15px auto;
-}
-
-input{
-padding:10px;
-border-radius:20px;
+.adminBtn{
+position:fixed;
+bottom:10px;
+right:10px;
+background:black;
+color:white;
 border:none;
-margin-top:20px;
+padding:8px 12px;
+cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-<h2>Aayu</h2>
-</nav>
+<button class="btn secondary toggle" onclick="toggleMode()">🌙</button>
 
-<div class="hero">
-<div class="hero-content">
-<h1>Aayu From Bihar</h1>
-<button class="btn primary" onclick="scrollToSection('quiz')">Take Quiz</button>
-</div>
-</div>
+<header>
+<h1>Garhani Village Pro Quiz</h1>
+<p>Test Your Knowledge & Earn Professional Certificate</p>
+</header>
 
 <section id="quiz">
-<h2 class="section-title">Village Quiz</h2>
-<div class="quiz-box">
-<p>Garhani kis rajya me hai?</p>
-<button class="btn primary" onclick="checkAnswer('A')">A) Bihar</button>
-<button class="btn primary" onclick="checkAnswer('B')">B) Delhi</button>
-<p id="result"></p>
+<div id="quizBox">
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+<h2 id="question"></h2>
+<div id="options"></div>
 </div>
 </section>
 
-<!-- CERTIFICATE -->
-<section class="certificate-wrapper" id="certificate">
-<h2 class="section-title">Your Certificate</h2>
+<section id="timeline">
+<h2>My Journey</h2>
+<div class="timeline">
+<div>🎓 Started Learning Coding</div>
+<div>💻 Built First Website</div>
+<div>🏆 Created Village Quiz</div>
+<div>🚀 Future Developer Goal</div>
+</div>
+</section>
 
-<div class="certificate-box" id="certificateBox">
-
-<div class="cert-id">Certificate ID: <span id="certId"></span></div>
-
-<div class="medal">🥇</div>
-
+<section id="certificate" style="display:none;">
+<h2>Your Certificate</h2>
+<div id="certificateBox">
+<div class="medal" id="medalIcon"></div>
 <h1>Certificate of Achievement</h1>
-<div class="gold-line"></div>
-
 <p>This certificate is proudly presented to</p>
 <h2 id="certName" style="color:#f97316;"></h2>
-
-<p>For Successfully Completing the Garhani Village Quiz</p>
-
-<p style="margin-top:25px;">Date: <span id="certDate"></span></p>
-</div>
-
-<input type="text" id="username" placeholder="Enter Your Name">
+<p id="certGrade"></p>
+<p>Certificate ID: <span id="certID"></span></p>
+<p>Date: <span id="certDate"></span></p>
 <br>
+<p>Authorized By Aayu</p>
+</div>
+<br>
+<input type="text" id="username" placeholder="Enter Your Name" style="padding:10px;border-radius:20px;border:none;">
+<br><br>
 <button class="btn primary" onclick="generateCertificate()">Generate</button>
 <button class="btn secondary" onclick="downloadCertificate()">Download</button>
 </section>
 
-<footer>
-Made with ❤️ in Bihar | © 2026 Aayu
-</footer>
+<section id="adminPanel" style="display:none; padding:40px 10%; background:#111827;">
+<h2>Admin Panel</h2>
+<input type="password" id="adminPass" placeholder="Enter Admin Password">
+<button class="btn primary" onclick="loginAdmin()">Login</button>
+
+<div id="adminControls" style="display:none; margin-top:20px;">
+<h3>Add New Question</h3>
+<input type="text" id="newQ" placeholder="Question"><br><br>
+<input type="text" id="opt1" placeholder="Option 1"><br><br>
+<input type="text" id="opt2" placeholder="Option 2"><br><br>
+<input type="text" id="opt3" placeholder="Option 3"><br><br>
+<input type="text" id="opt4" placeholder="Option 4"><br><br>
+<input type="number" id="correctIndex" placeholder="Correct Index (0-3)"><br><br>
+<button class="btn primary" onclick="addQuestion()">Add Question</button>
+
+<h3 style="margin-top:30px;">Delete Last Question</h3>
+<button class="btn secondary" onclick="deleteQuestion()">Delete</button>
+</div>
+</section>
+
+<button class="adminBtn" onclick="document.getElementById('adminPanel').style.display='block'">⚙</button>
 
 <script>
-function scrollToSection(id){
-document.getElementById(id).scrollIntoView({behavior:'smooth'});
+
+let questions=[
+{q:"Garhani is in which state?",a:["Bihar","UP","Delhi","Punjab"],c:0},
+{q:"Capital of Bihar?",a:["Patna","Delhi","Lucknow","Ranchi"],c:0},
+{q:"HTML stands for?",a:["Hyper Text Markup Language","High Tool","Home Tool","None"],c:0},
+{q:"CSS is used for?",a:["Styling","Cooking","Drawing","Gaming"],c:0},
+{q:"JS stands for?",a:["JavaScript","JustStyle","JavaSystem","None"],c:0},
+{q:"India Independence Year?",a:["1947","1950","1930","1960"],c:0},
+{q:"Village is part of?",a:["India","USA","UK","Nepal"],c:0},
+{q:"Coding is?",a:["Skill","Food","Game","Car"],c:0},
+{q:"Garhani is famous for?",a:["Village Life","Beach","Mountain","Metro"],c:0},
+{q:"Bihar CM?",a:["Nitish Kumar","Modi","Yogi","None"],c:0}
+];
+
+if(localStorage.getItem("quizData")){
+questions=JSON.parse(localStorage.getItem("quizData"));
 }
 
-function checkAnswer(ans){
-if(ans==='A'){
-document.getElementById("result").innerHTML="✅ Correct! Certificate unlocked!";
-document.getElementById("certificate").style.display="block";
-}else{
-document.getElementById("result").innerHTML="❌ Wrong Answer!";
+let current=0;
+let score=0;
+
+function loadQuestion(){
+let q=questions[current];
+document.getElementById("question").innerText=q.q;
+let optionsHTML="";
+q.a.forEach((opt,i)=>{
+optionsHTML+=`<div class="option" onclick="checkAnswer(${i})">${opt}</div>`;
+});
+document.getElementById("options").innerHTML=optionsHTML;
+document.getElementById("progressBar").style.width=((current)/questions.length)*100+"%";
 }
+
+function checkAnswer(i){
+if(i===questions[current].c){score++;}
+current++;
+if(current<questions.length){loadQuestion();}
+else{finishQuiz();}
+}
+
+function finishQuiz(){
+document.getElementById("quiz").style.display="none";
+document.getElementById("certificate").style.display="block";
 }
 
 function generateCertificate(){
 let name=document.getElementById("username").value;
-if(name===""){alert("Please enter your name");return;}
+if(name===""){alert("Enter Name");return;}
+
+let percentage=(score/questions.length)*100;
+let grade="";
+let medal="";
+
+if(percentage>=90){grade="Gold Level"; medal="🥇";}
+else if(percentage>=70){grade="Silver Level"; medal="🥈";}
+else{grade="Bronze Level"; medal="🥉";}
 
 document.getElementById("certName").innerText=name;
+document.getElementById("certGrade").innerText="Awarded: "+grade+" ("+percentage+"%)";
+document.getElementById("medalIcon").innerText=medal;
 document.getElementById("certDate").innerText=new Date().toLocaleDateString();
-
-let randomId = "GARH-" + Math.floor(100000 + Math.random() * 900000);
-document.getElementById("certId").innerText=randomId;
+document.getElementById("certID").innerText="GAR-"+Math.floor(Math.random()*100000);
 }
 
 function downloadCertificate(){
 html2canvas(document.querySelector("#certificateBox")).then(canvas=>{
 let link=document.createElement("a");
-link.download="Gold-Certificate.png";
+link.download="certificate.png";
 link.href=canvas.toDataURL();
 link.click();
 });
 }
+
+function toggleMode(){
+document.body.classList.toggle("light");
+}
+
+function loginAdmin(){
+let pass=document.getElementById("adminPass").value;
+if(pass==="admin123"){
+document.getElementById("adminControls").style.display="block";
+alert("Admin Logged In");
+}else{alert("Wrong Password");}
+}
+
+function addQuestion(){
+let q=document.getElementById("newQ").value;
+let options=[
+opt1.value,opt2.value,opt3.value,opt4.value
+];
+let correct=parseInt(correctIndex.value);
+questions.push({q:q,a:options,c:correct});
+localStorage.setItem("quizData",JSON.stringify(questions));
+alert("Question Added");
+}
+
+function deleteQuestion(){
+questions.pop();
+localStorage.setItem("quizData",JSON.stringify(questions));
+alert("Last Question Deleted");
+}
+
+loadQuestion();
+
 </script>
 
 </body>
