@@ -6,47 +6,25 @@
 <title>Aayu | Garhani Ke Lal</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{
-background:linear-gradient(-45deg,#0f172a,#1e293b,#0ea5e9,#f97316);
-background-size:400% 400%;
-animation:gradient 12s ease infinite;
-scroll-behavior:smooth;
-color:white;
-}
-@keyframes gradient{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
-}
-
+body{background:#0f172a;color:white;scroll-behavior:smooth;}
 header{background:#111;padding:15px 40px;position:sticky;top:0;z-index:1000;}
 header h1{color:#ff9800;}
-.admin-btn{position:absolute;top:20px;right:40px;}
-
 section{padding:70px 20px;text-align:center;}
 
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;}
-.hero h2{font-size:34px;margin-bottom:20px;}
-.cursor{animation:blink 0.8s infinite;}
-@keyframes blink{50%{opacity:0;}}
-
 .btn{
-padding:12px 30px;
+padding:12px 25px;
 background:#ff9800;
-color:white;
 border:none;
 border-radius:30px;
 cursor:pointer;
+color:white;
 margin:10px;
-transition:.3s;
 }
-.btn:hover{background:#111;transform:scale(1.05);}
 
 .gallery-grid{
 display:grid;
@@ -54,118 +32,89 @@ grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:15px;
 margin-top:20px;
 }
-.gallery-grid img{
-width:100%;
-border-radius:10px;
-transition:.3s;
-}
-.gallery-grid img:hover{transform:scale(1.05);}
+.gallery-grid img{width:100%;border-radius:10px;}
 
 .video-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:20px;
-max-width:1000px;
-margin:40px auto;
+margin-top:30px;
 }
-.video-grid video{
-width:100%;
-border-radius:10px;
-}
+.video-grid video{width:100%;border-radius:10px;}
 
-.location-section{
-background:#1e293b;
+.location-card{
+max-width:900px;
+margin:auto;
 }
-.quote-box{
-background:white;
-color:black;
-padding:20px;
-margin:20px auto;
-max-width:700px;
-border-left:5px solid #ff9800;
-border-radius:10px;
-}
+iframe{width:100%;height:350px;border:none;border-radius:15px;}
 
+#quizPage{display:none;}
 #certificateSection{display:none;}
 
 #certificateBox{
 background:white;
 color:black;
 padding:40px;
+border:10px solid gold;
 border-radius:15px;
 max-width:700px;
 margin:auto;
-border:10px solid gold;
-box-shadow:0 0 40px gold;
-position:relative;
 }
 
 .medal{font-size:60px;}
-.top-badge{
-position:absolute;
-top:20px;
-left:20px;
-background:gold;
-padding:5px 15px;
-font-weight:bold;
-display:none;
-}
-
-.admin-panel{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-display:none;
-overflow:auto;
-padding:40px;
-z-index:9999;
-}
-.admin-card{
-background:#1e293b;
-padding:20px;
-border-radius:15px;
-}
-input{
-padding:10px;
-margin:10px;
-border-radius:10px;
-border:none;
-}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>Aayu From Bihar 🌿</h1>
-<button class="btn admin-btn" onclick="toggleAdmin()">Admin</button>
+<h1>Aayu From Garhani 🌿</h1>
 </header>
 
-<section class="hero">
-<h2><span id="typing"></span><span class="cursor">|</span></h2>
-<p>Proud Student From Garhani ❤️ | Future Developer 💻</p>
-<a href="#quiz"><button class="btn">Take Quiz</button></a>
+<!-- MAIN PAGE -->
+<section id="mainPage">
+<h2>Welcome To My Village Website ❤️</h2>
+<button class="btn" onclick="openQuiz()">Start Quiz</button>
+
+<h2>Garhani Photos</h2>
+<div class="gallery-grid">
+<img src="garhani1.jpg">
+<img src="garhani2.jpg">
+<img src="garhani3.jpg">
+<img src="garhani4.jpg">
+</div>
+
+<h2>Garhani Videos 🎥</h2>
+<div class="video-grid">
+<video controls src="garhani1.mp4"></video>
+<video controls src="garhani2.mp4"></video>
+<video controls src="garhani3.mp4"></video>
+<video controls src="garhani4.mp4"></video>
+</div>
+
+<h2>📍 Garhani Location</h2>
+<div class="location-card">
+<iframe src="https://www.google.com/maps?q=Garhani,Bihar&output=embed"></iframe>
+</div>
 </section>
 
-<section id="quiz">
+<!-- QUIZ PAGE -->
+<section id="quizPage">
 <h2>Garhani Quiz 📝</h2>
 <div id="quizContainer"></div>
-<button class="btn" onclick="submitQuiz()">Submit Quiz</button>
+<button class="btn" onclick="submitQuiz()">Submit</button>
+<button class="btn" onclick="goBack()">Back</button>
 <p id="quizResult"></p>
 </section>
 
+<!-- CERTIFICATE -->
 <section id="certificateSection">
 <h2>Your Certificate 🏆</h2>
 <div id="certificateBox">
-<div class="top-badge" id="topBadge">TOP SCORER</div>
 <div class="medal" id="medalIcon"></div>
 <h1>Certificate of Achievement</h1>
-<img id="logoPreview" width="100"><br>
 <p>This certificate is proudly presented to</p>
-<h2 id="certName" style="color:#f97316;"></h2>
+<h2 id="certName"></h2>
 <p id="certGrade"></p>
 <p>Certificate ID: <span id="certID"></span></p>
 <p>Date: <span id="certDate"></span></p>
@@ -173,43 +122,30 @@ border:none;
 <br>
 <input type="text" id="username" placeholder="Enter Your Name">
 <br>
-<input type="file" onchange="loadLogo(event)">
-<br>
 <button class="btn" onclick="generateCertificate()">Generate</button>
 <button class="btn" onclick="downloadPDF()">Download PDF</button>
-<button class="btn" onclick="window.print()">Print</button>
 </section>
-
-<div class="admin-panel" id="adminPanel">
-<div class="admin-card">
-<h2>Quiz Results</h2>
-<ul id="resultsList"></ul>
-<button class="btn" onclick="toggleAdmin()">Close</button>
-</div>
-</div>
 
 <script>
 
-/* Typing Effect */
-const texts=["Hi, I am Aayu 👋","Future Developer 💻","Proud From Garhani 🌿"];
-let ti=0,ci=0,del=false;
-function typeEffect(){
-let cur=texts[ti];
-if(!del){
-document.getElementById("typing").innerHTML=cur.substring(0,ci++);
-if(ci>cur.length){del=true;setTimeout(typeEffect,1500);return;}
-}else{
-document.getElementById("typing").innerHTML=cur.substring(0,ci--);
-if(ci<0){del=false;ti=(ti+1)%texts.length;}
+/* Navigation */
+function openQuiz(){
+document.getElementById("mainPage").style.display="none";
+document.getElementById("quizPage").style.display="block";
 }
-setTimeout(typeEffect,60);
-}
-typeEffect();
 
-/* Quiz Data */
+function goBack(){
+document.getElementById("quizPage").style.display="none";
+document.getElementById("mainPage").style.display="block";
+}
+
+/* Quiz Questions */
 const quizData=[
 {q:"Garhani kis district me hai?",a:["Bhojpur","Patna","Gaya","Nalanda"],correct:0},
-{q:"Garhani kis state me hai?",a:["Bihar","UP","MP","Jharkhand"],correct:0}
+{q:"Garhani kis state me hai?",a:["Bihar","UP","MP","Jharkhand"],correct:0},
+{q:"Bihar ki rajdhani kya hai?",a:["Patna","Delhi","Lucknow","Ranchi"],correct:0},
+{q:"Garhani Ara ke paas hai?",a:["Yes","No"],correct:0},
+{q:"Garhani Bharat me hai?",a:["Yes","No"],correct:0}
 ];
 
 function loadQuiz(){
@@ -252,55 +188,13 @@ document.getElementById("certGrade").innerText=`Awarded: ${grade} (${percentage}
 document.getElementById("medalIcon").innerText=medal;
 document.getElementById("certDate").innerText=new Date().toLocaleDateString();
 document.getElementById("certID").innerText="GAR-"+Date.now();
-
-saveResult(name,percentage);
-checkTopScorer(percentage);
 }
 
 function downloadPDF(){
 html2pdf().from(document.getElementById("certificateBox")).save();
 }
 
-/* Admin System */
-function saveResult(name,score){
-let results=JSON.parse(localStorage.getItem("quizResults"))||[];
-results.push({name,score});
-localStorage.setItem("quizResults",JSON.stringify(results));
-loadResults();
-}
-
-function loadResults(){
-let results=JSON.parse(localStorage.getItem("quizResults"))||[];
-let list=document.getElementById("resultsList");
-list.innerHTML="";
-results.forEach(r=>{
-list.innerHTML+=`<li>${r.name} - ${r.score}%</li>`;
-});
-}
-
-function toggleAdmin(){
-let panel=document.getElementById("adminPanel");
-panel.style.display=panel.style.display=="block"?"none":"block";
-loadResults();
-}
-
-function checkTopScorer(score){
-let results=JSON.parse(localStorage.getItem("quizResults"))||[];
-let max=Math.max(...results.map(r=>r.score));
-if(score>=max){
-document.getElementById("topBadge").style.display="block";
-}
-}
-
-function loadLogo(event){
-let reader=new FileReader();
-reader.onload=function(){
-document.getElementById("logoPreview").src=reader.result;
-}
-reader.readAsDataURL(event.target.files[0]);
-}
-
 </script>
 
 </body>
-</html>
+  </html>
