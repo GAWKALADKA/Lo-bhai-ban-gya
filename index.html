@@ -305,6 +305,134 @@ showPage("home");
 </script>
 
 <!-- PASTE PART 2 BELOW THIS LINE -->
+<!-- RESULT + CERTIFICATE SECTION -->
 
-</body>
+<section id="result">
+<h1>Your Result</h1>
+<div id="resultBox" style="background:white;color:black;padding:30px;border-radius:10px;max-width:700px;margin:auto;"></div>
+<button onclick="generateCertificate()">Get Certificate</button>
+<button class="back-btn" onclick="showPage('home')">Back</button>
+</section>
+
+<section id="certificate" style="background:#fdf6e3;color:black;padding:40px;display:none;">
+<div id="certificateBox" style="border:10px solid gold;padding:40px;background:#fff8dc;max-width:900px;margin:auto;position:relative;">
+
+<h1 style="font-size:40px;">Certificate of Achievement</h1>
+<p>This certificate is proudly presented to</p>
+<h2 id="certName" style="font-size:30px;margin:20px 0;">Aayu</h2>
+<p>For successfully completing the Knowledge Quiz</p>
+
+<p id="certScore"></p>
+<p id="certGrade"></p>
+<p id="certID"></p>
+<p id="certDate"></p>
+
+<div style="margin-top:30px;">
+<span style="font-size:40px;">🏅</span>
+</div>
+
+<p style="margin-top:40px;">Authorized By: <b>Sumit</b></p>
+
+</div>
+
+<br>
+<button onclick="printCertificate()">Print</button>
+<button onclick="downloadCertificate()">Download PDF</button>
+<button class="back-btn" onclick="showPage('home')">Back</button>
+</section>
+
+<script>
+
+/* Modify quiz end */
+function nextQuestion(){
+let selected=document.querySelector("input[name='opt']:checked");
+if(selected && parseInt(selected.value)===quizData[current].c){
+score++;
+}
+current++;
+if(current<quizData.length){
+loadQuestion();
+}else{
+showResult();
+}
+}
+
+function showResult(){
+let percentage = Math.round((score/quizData.length)*100);
+document.getElementById("resultBox").innerHTML=
+`<h2>Your Score: ${score}/${quizData.length}</h2>
+<h3>Percentage: ${percentage}%</h3>
+<h3>${percentage>=50 ? "PASS 🎉" : "FAIL ❌"}</h3>`;
+showPage("result");
+
+if(percentage>=50){
+saveResult(percentage);
+}
+}
+
+function generateCertificate(){
+let percentage = Math.round((score/quizData.length)*100);
+if(percentage<50){
+alert("You must score at least 50% to get certificate.");
+return;
+}
+
+let grade="Bronze";
+if(percentage>=80){grade="Gold";}
+else if(percentage>=65){grade="Silver";}
+
+let certID="CERT-"+Math.floor(Math.random()*100000);
+let date=new Date().toLocaleDateString();
+
+document.getElementById("certScore").innerText="Score: "+percentage+"%";
+document.getElementById("certGrade").innerText="Grade: "+grade;
+document.getElementById("certID").innerText="Certificate ID: "+certID;
+document.getElementById("certDate").innerText="Issue Date: "+date;
+
+showPage("certificate");
+}
+
+function printCertificate(){
+window.print();
+}
+
+function downloadCertificate(){
+window.print();
+}
+
+/* ADMIN PANEL */
+function openAdmin(){
+let pass=prompt("Enter Admin Password:");
+if(pass==="Arajila"){
+showAdmin();
+}else{
+alert("Wrong Password");
+}
+}
+
+function showAdmin(){
+let data=JSON.parse(localStorage.getItem("results"))||[];
+let html="<h2>Leaderboard</h2>";
+data.sort((a,b)=>b.score-a.score);
+data.forEach((d,i)=>{
+html+=`<p>${i+1}. ${d.name} - ${d.score}%</p>`;
+});
+html+=`<button onclick="clearData()">Clear Data</button>`;
+document.getElementById("resultBox").innerHTML=html;
+showPage("result");
+}
+
+function saveResult(scorePercent){
+let data=JSON.parse(localStorage.getItem("results"))||[];
+data.push({name:"Aayu",score:scorePercent});
+localStorage.setItem("results",JSON.stringify(data));
+}
+
+function clearData(){
+localStorage.removeItem("results");
+alert("Data Cleared");
+showPage("home");
+}
+
+</scriptBELOWody>
   </html>
