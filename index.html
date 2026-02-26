@@ -2,8 +2,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title id="siteTitle">Aayu From Garhanile>
-<link href="https://fonts.googleapis.comamily=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<title id="siteTitle">Aayu | Garhani Ke Lal</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 body{background:#f4f6f9;scroll-behavior:smooth;}
@@ -56,7 +56,7 @@ input,textarea{width:100%;padding:10px;margin:10px 0;border:none;border-radius:1
 </div>
 </section>
 <section>
-<h2>🎥 Garhani beauty videos</h2>
+<h2>🎥 Garhani Ki 4 Videos</h2>
 <div class="video-grid">
 <video id="v1" controls><source src="garhani1.mp4" type="video/mp4"></video>
 <video id="v2" controls><source src="garhani2.mp4" type="video/mp4"></video>
@@ -149,4 +149,4 @@ function resetVisitors(){localStorage.visits=0;alert("Visitor Reset!");}
 function changePassword(){let newPass=document.getElementById("newPass").value;if(newPass.length<4){alert("Password must be 4+ characters!");return;}localStorage.adminPass=newPass;alert("Password Changed Successfully!");document.getElementById("newPass").value="";}// QUIZ const quizData=[ {q:"Garhani kis district me hai?",a:["Bhojpur","Patna","Gaya","Nalanda"],correct:0}, {q:"Aayu ka favourite hobby kya hai?",a:["Coding","Cricket","Drawing","Singing"],correct:0}, {q:"Garhani kis state me hai?",a:["Bihar","UP","MP","Jharkhand"],correct:0}, {q:"Aayu kis village se hai?",a:["Garhani","Patna","Ara","Bhojpur"],correct:0}, {q:"Hero section me kaun dikh raha hai?",a:["Aayu","Rahul","Ravi","Suman"],correct:0}, {q:"Kitne video hai website me?",a:["2","3","4","5"],correct:2}, {q:"Bhojpuri motivation ka first quote kya hai?",a:["हम बिहारी बानी","कभी हार ना मानी","सपना देखे वाला","आरा जिला हमार शान"],correct:0}, {q:"Admin password default kya hai?",a:["admin123","password","1234","qwerty"],correct:0}, {q:"Google map me kis village ka location hai?",a:["Garhani","Patna","Ara","Bhojpur"],correct:0}, {q:"Typing effect me kitne text hai?",a:["20","15","10","25"],correct:0}]; let currentQ=0,score=0; function loadQuiz(){const container=document.getElementById("quizContainer");container.innerHTML=""; quizData.forEach((q,i)=>{ const div=document.createElement("div");div.style.marginBottom="15px"; let html=<p>${i+1}. ${q.q}</p>; q.a.forEach((opt,j)=>{html+=<label><input type='radio' name='q${i}' value='${j}'> ${opt}</label><br>;}); div.innerHTML=html;container.appendChild(div);});} document.getElementById("submitQuiz").addEventListener("click",()=>{ score=0; quizData.forEach((q,i)=>{const ans=document.querySelector(input[name='q${i}']:checked); if(ans && parseInt(ans.value)===q.correct){score++;}}); document.getElementById("quizResult").innerText=Your Score: ${score}/${quizData.length};}); loadQuiz(); </script>
 
 </body>
-                    </html>
+</html>
